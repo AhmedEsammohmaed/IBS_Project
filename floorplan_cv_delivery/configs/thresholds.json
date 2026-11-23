@@ -1,0 +1,8 @@
+{
+  "default_confidence_threshold": 0.35,
+  "threshold_status": "operational default; not optimized on a project held-out set",
+  "duplicate_bbox_iou_threshold": 0.65,
+  "tile_size_pixels": 1024,
+  "tile_overlap_pixels": 128,
+  "pdf_dpi": 200
+}

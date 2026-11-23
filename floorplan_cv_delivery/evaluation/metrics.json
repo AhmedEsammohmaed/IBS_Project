@@ -1,0 +1,20 @@
+{
+  "evaluation_status": "not_evaluated_for_this_delivery",
+  "reason": "No project-owned held-out dataset or ground-truth labels were provided. No project metrics are claimed.",
+  "per_class": {
+    "wall": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
+    "door": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
+    "window": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
+    "column": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
+    "room": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null}
+  },
+  "ocr": {"character_error_rate": null, "word_error_rate": null},
+  "operational": {"model_size_bytes": null, "cpu_latency_ms": null, "gpu_latency_ms": null, "peak_memory_bytes": null},
+  "upstream_reference_only": {
+    "source": "https://huggingface.co/phungpx/mask2former-swin-base-cubicassa",
+    "validation_split_mask_ap_50_95": 0.263,
+    "validation_split_mask_ap_50": 0.62,
+    "validation_split_mask_ap_75": 0.179,
+    "warning": "These upstream results are not an evaluation of this integration or deployment drawings."
+  }
+}

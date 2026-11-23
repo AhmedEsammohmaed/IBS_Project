@@ -1,0 +1,20 @@
+{
+  "model_version": "1.0.0",
+  "architecture": "Mask2Former with Swin-Base backbone",
+  "framework": "PyTorch + Hugging Face Transformers",
+  "export_format": "PyTorch checkpoint downloaded from Hugging Face at runtime; ONNX not supplied or validated",
+  "upstream_model_id": "phungpx/mask2former-swin-base-cubicassa",
+  "upstream_revision": "main (not pinned; pin a commit SHA for production deployments)",
+  "task": "instance segmentation",
+  "training_dataset_reported_upstream": "CubiCasa5K COCO conversion",
+  "input_dimensions": "dynamic source image, divided into 1024 px tiles with 128 px overlap by default",
+  "supported_classes": ["wall"],
+  "class_ids": "Loaded from the checkpoint configuration at runtime",
+  "normalization": "Hugging Face image processor defaults for the selected checkpoint",
+  "preprocessing": {"exif_orientation": "applied", "pdf_dpi_default": 200, "pdf_pages": "all pages", "cropping": "none; complete page covered by overlapping tiles"},
+  "thresholds": "configs/thresholds.json; default is not evaluation-calibrated",
+  "coordinate_conventions": "origin at top-left; x increases right; y increases down; polygon points [x,y]; bbox [x,y,width,height]; coordinates refer to full rendered/oriented input page pixels",
+  "runtime": {"devices": ["cpu", "cuda when compatible PyTorch and driver are installed"], "fallback": "auto selects CUDA when available and otherwise CPU", "pdf_renderer": "PyMuPDF"},
+  "license": "Upstream model is labeled 'other'; inspect upstream model card and dataset terms before use or redistribution. We do not redistribute model weights.",
+  "model_file_checksums": "No weights are bundled; runtime fetches upstream weights. Pin and hash the downloaded files before production release."
+}

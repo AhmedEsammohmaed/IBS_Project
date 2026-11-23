@@ -1,0 +1,27 @@
+{
+  "model_version": "1.0.0",
+  "model": {"id": "phungpx/mask2former-swin-base-cubicassa", "revision": "main", "device": "cpu"},
+  "source": {
+    "image_id": "<sha256-prefix-of-input>",
+    "pages": [{"page_index": null, "image_width": 2400, "image_height": 1800, "source_kind": "image", "pdf_page_width_points": null, "pdf_page_height_points": null}],
+    "coordinate_system": "image_pixel; origin top-left; x right; y down; bbox [x,y,width,height]"
+  },
+  "detections": [
+    {
+      "id": "prediction-000001",
+      "class": "wall",
+      "class_id": "from model configuration",
+      "confidence": 0.0,
+      "geometry_type": "polygon",
+      "geometry": {"polygons": [{"points": [[800, 500], [840, 500], [840, 540], [800, 540]]}]},
+      "bbox": [800, 500, 40, 40],
+      "source_image_id": "<sha256-prefix-of-input>",
+      "page_index": null,
+      "tile_id": 0,
+      "uncertainty": {"confidence_is_model_score": true, "human_review_required": true}
+    }
+  ],
+  "ocr": null,
+  "review_status": "unreviewed_predictions",
+  "limitations": ["Schema illustration only; geometry and confidence above are not a real inference result."]
+}

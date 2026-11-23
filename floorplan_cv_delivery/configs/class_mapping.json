@@ -1,0 +1,14 @@
+{
+  "model_id": "phungpx/mask2former-swin-base-cubicassa",
+  "class_mapping_source": "upstream model configuration loaded at runtime",
+  "supported_classes": [
+    {
+      "class_name": "wall",
+      "class_id": "read from model.config.id2label at runtime",
+      "capability": "instance segmentation",
+      "status": "available from configured checkpoint"
+    }
+  ],
+  "unsupported_classes": ["door", "window", "column", "room", "room_label", "dimension_annotation"],
+  "note": "The configured upstream model card reports one class: wall. Unsupported classes require separately trained and evaluated models."
+}
