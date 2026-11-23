@@ -32,10 +32,15 @@ def box_iou(a: list[int], b: list[int]) -> float:
 
 
 def merge_tile_duplicates(items: list[dict[str, Any]], iou_threshold: float = 0.65) -> list[dict[str, Any]]:
-    """Greedy same-class box NMS; retained output is sorted by confidence."""
+    """Greedy same-class box NMS, retaining an audit trail for every merge."""
     kept: list[dict[str, Any]] = []
     for item in sorted(items, key=lambda row: row["confidence"], reverse=True):
-        if any(item["class_id"] == old["class_id"] and box_iou(item["bbox"], old["bbox"]) >= iou_threshold for old in kept):
+        duplicate = next((old for old in kept if item["class_id"] == old["class_id"]
+                          and box_iou(item["bbox"], old["bbox"]) >= iou_threshold), None)
+        if duplicate is not None:
+            duplicate.setdefault("merged_duplicates", []).append({
+                "confidence": item["confidence"], "bbox": item["bbox"], "tile_id": item.get("tile_id"),
+            })
             continue
         kept.append(item)
     return kept

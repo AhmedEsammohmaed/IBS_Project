@@ -1,14 +1,20 @@
 {
-  "model_id": "phungpx/mask2former-swin-base-cubicassa",
-  "class_mapping_source": "upstream model configuration loaded at runtime",
-  "supported_classes": [
-    {
-      "class_name": "wall",
-      "class_id": "read from model.config.id2label at runtime",
-      "capability": "instance segmentation",
-      "status": "available from configured checkpoint"
-    }
+  "model_id": "swedishtech/RAQEEB-CCTV",
+  "revision": "d0f2b17",
+  "model_version": "1.0.0",
+  "classes": [
+    {"id": 0, "name": "wall", "output_class": "wall", "capability": "instance segmentation"},
+    {"id": 1, "name": "door", "output_class": "door", "capability": "instance segmentation"},
+    {"id": 2, "name": "window", "output_class": "window", "capability": "instance segmentation"},
+    {"id": 3, "name": "open_passage", "output_class": "open_passage", "capability": "instance segmentation"},
+    {"id": 4, "name": "column", "output_class": "column", "capability": "instance segmentation"},
+    {"id": 5, "name": "stair", "output_class": "stair", "capability": "instance segmentation"},
+    {"id": 6, "name": "elevator", "output_class": "elevator", "capability": "instance segmentation"},
+    {"id": 7, "name": "escalator", "output_class": "escalator", "capability": "instance segmentation", "evaluation_status": "unvalidated; 4 held-out instances"},
+    {"id": 8, "name": "exit_marker", "output_class": "exit_marker", "capability": "instance segmentation"},
+    {"id": 9, "name": "gate", "output_class": "gate", "capability": "instance segmentation", "evaluation_status": "no held-out examples"},
+    {"id": 10, "name": "space_region", "output_class": "room", "capability": "room-region instance segmentation"}
   ],
-  "unsupported_classes": ["door", "window", "column", "room", "room_label", "dimension_annotation"],
-  "note": "The configured upstream model card reports one class: wall. Unsupported classes require separately trained and evaluated models."
+  "ocr_classes": ["room_label_candidate", "dimension_text_candidate", "scale_reference_candidate"],
+  "note": "Text labels and dimension candidates are heuristic OCR outputs, not neural model classes. This model does not predict dimensions in the class detector."
 }

@@ -1,7 +1,9 @@
-# Evaluation status
+# Evaluation report status
 
-This delivery has no project-specific evaluation results. A held-out dataset, annotations, and evaluation protocol were not supplied, so precision, recall, F1, mAP, IoU, Dice, OCR error rates, latency, memory, confusion matrix, and failure-case artifacts are deliberately marked unavailable in `metrics.json`.
+The selected model card reports a held-out test split of 1,682 plans with per-class instance counts, precision, recall, F1, mask mAP50, and mask mAP50:95. The values are mirrored in `metrics.json` and are **upstream-reported results**. They do not measure this wrapper, PDF pipeline, tiled inference, OCR, or the planner's own input distribution.
 
-The upstream model card reports wall mask AP 0.263 at IoU 0.50:0.95, AP 0.620 at IoU 0.50, and AP 0.179 at IoU 0.75 on its own validation split. These numbers are reference context only and must not be represented as results on Private 5G Deployment Planner data.
+The model card reports its test split grouped by near-duplicate source drawings and a partial-label scoring protocol (only score categories fully annotated by each source). This package does not redistribute that split. Obtain the source data under its original license to reproduce it.
 
-To complete acceptance evaluation, supply held-out floor plans with per-instance wall annotations and (for expanded classes) corresponding labels, then report class-wise metrics and operational measurements on the deployment hardware.
+Escalator has only four test instances and gate has none, so both remain marked unvalidated. Column mask mAP50 is 0.300 with recall 0.247; wall mask mAP50:95 is 0.230. These weak areas require review and likely target-domain validation.
+
+No held-out planner-specific set was supplied. No OCR CER/WER, pixel IoU/Dice, confusion matrix, project-specific hard examples, false-positive/false-negative images, or target-hardware CPU/GPU latency and memory have been measured. The current environment also lacked free disk space to install PyTorch, so the inference wrapper itself has not been executed here. `evaluation_report.pdf` summarizes these results and limitations.

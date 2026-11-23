@@ -1,8 +1,23 @@
 {
-  "default_confidence_threshold": 0.35,
-  "threshold_status": "operational default; not optimized on a project held-out set",
-  "duplicate_bbox_iou_threshold": 0.65,
-  "tile_size_pixels": 1024,
-  "tile_overlap_pixels": 128,
-  "pdf_dpi": 200
+  "confidence_floor": 0.05,
+  "review_candidate_floor": 0.1,
+  "operating_thresholds": {
+    "wall": 0.2773,
+    "door": 0.3033,
+    "window": 0.3493,
+    "open_passage": 0.1812,
+    "column": 0.0921,
+    "stair": 0.4084,
+    "elevator": 0.7057,
+    "escalator": 0.6837,
+    "exit_marker": 0.3293,
+    "gate": 0.5,
+    "space_region": 0.3794
+  },
+  "threshold_source": "Per-class max mask-F1 confidence on the upstream 2,252-image validation split. These values are not calibrated for deployment drawings.",
+  "tile_size_pixels": 1536,
+  "tile_overlap_pixels": 192,
+  "model_input_size_pixels": 1024,
+  "pdf_dpi_default": 200,
+  "unvalidated_classes": ["escalator", "gate"]
 }

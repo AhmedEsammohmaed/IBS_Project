@@ -1,0 +1,1 @@
+No project-specific false-positive/false-negative images are included. These require reviewed annotations and outputs from the planner's target domain. Upstream model-card limitations and per-class metrics are recorded in `../metrics.json` and `../REPORT.md`.

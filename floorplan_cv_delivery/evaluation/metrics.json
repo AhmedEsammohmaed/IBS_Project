@@ -1,20 +1,28 @@
 {
-  "evaluation_status": "not_evaluated_for_this_delivery",
-  "reason": "No project-owned held-out dataset or ground-truth labels were provided. No project metrics are claimed.",
-  "per_class": {
-    "wall": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
-    "door": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
-    "window": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
-    "column": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null},
-    "room": {"precision": null, "recall": null, "f1": null, "map": null, "iou": null, "dice": null}
+  "evaluation_status": "upstream_heldout_reported; integration_not_independently_evaluated",
+  "model": "swedishtech/RAQEEB-CCTV@d0f2b17",
+  "dataset": {
+    "name": "RAQEEB merged floor-plan test split",
+    "held_out_images": 1682,
+    "split_grouping": "grouped by near-duplicate drawing according to upstream model card",
+    "scoring_note": "Each image scored only on classes its source fully annotates (partial-label protocol). Dataset files are not redistributed here."
   },
-  "ocr": {"character_error_rate": null, "word_error_rate": null},
-  "operational": {"model_size_bytes": null, "cpu_latency_ms": null, "gpu_latency_ms": null, "peak_memory_bytes": null},
-  "upstream_reference_only": {
-    "source": "https://huggingface.co/phungpx/mask2former-swin-base-cubicassa",
-    "validation_split_mask_ap_50_95": 0.263,
-    "validation_split_mask_ap_50": 0.62,
-    "validation_split_mask_ap_75": 0.179,
-    "warning": "These upstream results are not an evaluation of this integration or deployment drawings."
-  }
+  "per_class": {
+    "wall": {"instances": 30469, "images": 1061, "precision": 0.62, "recall": 0.513, "f1": 0.564, "mask_map50": 0.53, "mask_map50_95": 0.23, "dice": null, "iou": null},
+    "door": {"instances": 7579, "images": 893, "precision": 0.843, "recall": 0.737, "f1": 0.789, "mask_map50": 0.82, "mask_map50_95": 0.488, "dice": null, "iou": null},
+    "window": {"instances": 7326, "images": 652, "precision": 0.703, "recall": 0.664, "f1": 0.685, "mask_map50": 0.636, "mask_map50_95": 0.257, "dice": null, "iou": null},
+    "open_passage": {"instances": 47, "images": 23, "precision": 0.516, "recall": 0.298, "f1": 0.449, "mask_map50": 0.434, "mask_map50_95": 0.14, "dice": null, "iou": null},
+    "column": {"instances": 154, "images": 36, "precision": 0.621, "recall": 0.247, "f1": 0.379, "mask_map50": 0.3, "mask_map50_95": 0.072, "dice": null, "iou": null},
+    "stair": {"instances": 426, "images": 225, "precision": 0.737, "recall": 0.736, "f1": 0.751, "mask_map50": 0.761, "mask_map50_95": 0.511, "dice": null, "iou": null},
+    "elevator": {"instances": 142, "images": 75, "precision": 0.898, "recall": 0.965, "f1": 0.939, "mask_map50": 0.974, "mask_map50_95": 0.833, "dice": null, "iou": null},
+    "escalator": {"instances": 4, "images": 3, "precision": 0.436, "recall": 0.97, "f1": 0.615, "mask_map50": 0.606, "mask_map50_95": 0.507, "dice": null, "iou": null, "warning": "Only four instances in the held-out set; not reliable evidence."},
+    "exit_marker": {"instances": 76, "images": 24, "precision": 0.804, "recall": 0.974, "f1": 0.943, "mask_map50": 0.952, "mask_map50_95": 0.526, "dice": null, "iou": null},
+    "gate": {"instances": 0, "images": 0, "precision": null, "recall": null, "f1": null, "mask_map50": null, "mask_map50_95": null, "dice": null, "iou": null, "warning": "No held-out examples."},
+    "room": {"instances": 2032, "images": 136, "precision": 0.865, "recall": 0.863, "f1": 0.867, "mask_map50": 0.898, "mask_map50_95": 0.705, "dice": null, "iou": null}
+  },
+  "aggregate": {"mask_map50": 0.691, "mask_map50_95": 0.427, "box_map50_95": 0.567},
+  "ocr": {"character_error_rate": null, "word_error_rate": null, "status": "not evaluated"},
+  "operational": {"model_size_bytes": 21600665, "cpu_inference_latency_ms": null, "gpu_inference_latency_ms": null, "peak_memory_bytes": null, "high_resolution_latency_ms": null},
+  "not_available": ["confusion matrix", "deployment-specific difficult examples", "false-positive/false-negative cases", "CPU/GPU latency and memory measured on target hardware", "project-data validation metrics"],
+  "source": "https://huggingface.co/swedishtech/RAQEEB-CCTV"
 }

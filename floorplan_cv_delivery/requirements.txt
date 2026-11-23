@@ -1,11 +1,16 @@
-# CPU installation (choose a matching PyTorch wheel for your OS/runtime first):
-torch>=2.2
-transformers>=4.45,<5
-accelerate>=0.34
+# Python 3.11–3.14. PyTorch GPU users should install the matching CUDA build first
+# from https://pytorch.org/get-started/locally/ then install the remaining packages.
+torch>=2.6
+torchvision>=0.21
+ultralytics>=8.3,<9
+huggingface-hub>=0.27
 pillow>=10.0
 numpy>=1.26
 opencv-python-headless>=4.9
 pymupdf>=1.24
+pytesseract>=0.3.13
+fastapi>=0.115
+python-multipart>=0.0.20
+psutil>=5.9
 
-# Optional OCR support: also install the Tesseract system executable.
-# pytesseract>=0.3.13
+# OCR additionally requires the Tesseract 5 executable in PATH.
